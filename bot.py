@@ -42,7 +42,6 @@ def del_cmd(key) -> str:
 
 
 def handle_response(msg) -> str:
-    load_backup()
     msgs = msg.split(' ')
 
     if commands.get(msgs[0]) != None:
@@ -78,7 +77,6 @@ def run_discord_bot():
         if message.author == client.user:
             return
         
-        user = str(message.author)
         msg = str(message.content)
 
         if msg[0] != '!':
