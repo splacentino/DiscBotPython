@@ -85,5 +85,3 @@ def run_discord_bot():
             await send_message(message, msg)
     
     client.run(get_token())
-
-run_discord_bot()
