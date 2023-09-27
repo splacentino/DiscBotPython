@@ -18,8 +18,12 @@ def update_backup():
 
 def load_backup():
     global commands
-    with open('commands_data.pkl', 'rb') as f:
-        commands = pickle.load(f)
+    try :
+        with open('commands_data.pkl', 'rb') as f:
+            commands = pickle.load(f)
+    except IOError:
+        print('no file')
+
 
 def add_cmd(key, value) -> str:
     if commands.get(key) != None:
@@ -76,7 +80,6 @@ def run_discord_bot():
         
         user = str(message.author)
         msg = str(message.content)
-
 
         if msg[0] != '!':
             return
