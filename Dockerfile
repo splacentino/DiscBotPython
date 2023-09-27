@@ -3,5 +3,3 @@ WORKDIR /DisBotPython
 COPY requirements.txt /DisBotPython/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-COPY . /DisBotPython/
-CMD python main.py
