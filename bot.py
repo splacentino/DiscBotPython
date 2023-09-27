@@ -6,7 +6,6 @@ commands = {}
 
 async def send_message(message, user_message):
     try:
-        print(commands)
         response = handle_response(user_message)
         if response != None:
             await message.channel.send(response)
@@ -86,3 +85,5 @@ def run_discord_bot():
             await send_message(message, msg)
     
     client.run(get_token())
+
+run_discord_bot()
